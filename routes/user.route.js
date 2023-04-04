@@ -59,9 +59,9 @@ userRouter.post("/getProfile",async(req,res)=>{
         let {amount,time,roi}= req.body
        let totalInvestedAmount= amount*time
        let i=+roi/100
-       let core= ((1+i)**time).toFixed(2)
+       let core= ((1+i)**time).toFixed(0)
       
-       let totalMaturityValue= ((core-1)*amount/i).toFixed(2)
+       let totalMaturityValue= ((core-1)*amount/i).toFixed(0)
        let interest= totalMaturityValue-totalInvestedAmount
 try{
        res.send({
